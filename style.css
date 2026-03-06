@@ -1,13 +1,13 @@
 body {
 margin:0;
 font-family: 'Poppins', sans-serif;
-background:#e3f2fd;
+background: linear-gradient(to bottom, #eef6fb, #e3f2fd);
 }
 
 header {
-background:#0d47a1;
+background: linear-gradient(135deg, #0d47a1, #1565c0);
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
