@@ -1,0 +1,51 @@
+body {
+margin:0;
+font-family: Arial, sans-serif;
+background:#e3f2fd;
+}
+
+header {
+background:#0d47a1;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container {
+padding:30px;
+max-width:900px;
+margin:auto;
+}
+
+.card {
+background:white;
+padding:20px;
+border-radius:8px;
+margin-bottom:20px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.week-links {
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.week-links a {
+text-decoration:none;
+background:#90caf9;
+padding:10px;
+border-radius:6px;
+color:black;
+}
+
+.week-links a:hover {
+background:#64b5f6;
+}
+
+footer {
+text-align:center;
+padding:15px;
+background:#0d47a1;
+color:white;
+}
