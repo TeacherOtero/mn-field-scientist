@@ -49,3 +49,6 @@ padding:15px;
 background:#0d47a1;
 color:white;
 }
+h1, h2 {
+font-weight: 600;
+}
