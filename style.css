@@ -1,21 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* =============================
+   GLOBAL STYLES
+============================= */
+
 body {
-margin:0;
+margin: 0;
 font-family: 'Poppins', sans-serif;
 background: linear-gradient(to bottom, #eef6fb, #e3f2fd);
+color: #1a1a1a;
 }
+
+/* =============================
+   HEADER
+============================= */
 
 header {
 background: linear-gradient(135deg, #0d47a1, #1565c0);
-color:white;
-padding:25px;
-text-align:center;
+color: white;
+padding: 25px;
+text-align: center;
 }
 
-.container {
-padding:30px;
-max-width:900px;
-margin:auto;
+header h1 {
+margin: 0;
+font-weight: 600;
 }
+
+header p {
+margin: 5px 0 0 0;
+opacity: 0.9;
+}
+
+/* =============================
+   LAYOUT
+============================= */
+
+.container {
+padding: 30px;
+max-width: 900px;
+margin: auto;
+}
+
+/* =============================
+   CARDS
+============================= */
 
 .card {
 background: white;
@@ -31,30 +60,125 @@ transform: translateY(-2px);
 box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
 
-.week-links {
-display:flex;
-flex-direction:column;
-gap:10px;
+/* =============================
+   HEADINGS
+============================= */
+
+h2 {
+margin-bottom: 10px;
+border-bottom: 3px solid #1565c0;
+padding-bottom: 6px;
+font-weight: 600;
 }
 
-.week-links a {
-text-decoration:none;
-background:#90caf9;
-padding:10px;
-border-radius:6px;
-color:black;
+/* =============================
+   MISSION BUTTONS
+============================= */
+
+.missionBtn {
+background: white;
+border: 2px solid #1565c0;
+padding: 12px;
+border-radius: 10px;
+text-align: left;
+cursor: pointer;
+font-weight: 600;
+transition: all 0.2s ease;
 }
 
-.week-links a:hover {
-background:#64b5f6;
+.missionBtn:hover {
+background: #1565c0;
+color: white;
 }
+
+.missionBtn.completed {
+background: #4caf50;
+border-color: #4caf50;
+color: white;
+}
+
+/* =============================
+   QUESTIONS
+============================= */
+
+p strong {
+display: block;
+margin-top: 15px;
+font-size: 1.05rem;
+}
+
+input[type="radio"] {
+margin-right: 8px;
+margin-top: 6px;
+}
+
+/* =============================
+   REVIEW BOX
+============================= */
+
+.reviewBox {
+background: #f1f8e9;
+padding: 12px;
+border-radius: 8px;
+margin-bottom: 12px;
+border-left: 4px solid #4caf50;
+}
+
+/* =============================
+   TABLE STYLING
+============================= */
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 12px;
+margin-bottom: 18px;
+}
+
+th {
+background-color: #1565c0;
+color: white;
+padding: 10px;
+text-align: center;
+}
+
+td {
+padding: 8px;
+text-align: center;
+border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+background-color: #f2f6fb;
+}
+
+/* =============================
+   PROGRESS BAR
+============================= */
+
+.progress {
+height: 20px;
+background: #cfd8dc;
+border-radius: 10px;
+overflow: hidden;
+margin-top: 10px;
+}
+
+.bar {
+height: 100%;
+background: #4caf50;
+width: 0%;
+transition: width 0.3s ease;
+}
+
+/* =============================
+   FOOTER
+============================= */
 
 footer {
-text-align:center;
-padding:15px;
-background:#0d47a1;
-color:white;
-}
-h1, h2 {
-font-weight: 600;
+text-align: center;
+padding: 15px;
+background: #0d47a1;
+color: white;
+margin-top: 30px;
 }
