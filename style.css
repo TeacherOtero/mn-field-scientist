@@ -204,30 +204,29 @@ position: relative;
 overflow: hidden;
 }
 /* =============================
-   NAVIGATION BAR
+   NAVIGATION BAR (Refined)
 ============================= */
 
 .navBar {
-margin-top: 15px;
+margin-top: 18px;
 display: flex;
 justify-content: center;
-gap: 20px;
+gap: 12px;
 flex-wrap: wrap;
-border-top: 1px solid rgba(255,255,255,0.3);
-padding-top: 10px;
 }
 
 .navBar a {
+background: rgba(255,255,255,0.15);
 color: white;
 text-decoration: none;
+padding: 8px 14px;
+border-radius: 20px;
 font-weight: 600;
-opacity: 0.9;
-padding: 6px 10px;
-border-radius: 6px;
+font-size: 0.95rem;
 transition: all 0.2s ease;
 }
 
 .navBar a:hover {
-background: rgba(255,255,255,0.15);
-opacity: 1;
+background: white;
+color: #0d47a1;
 }
