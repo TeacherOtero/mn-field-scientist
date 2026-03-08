@@ -264,7 +264,11 @@ let m = missionBank[id];
 let html = `<div class="card"><h2>${m.title}</h2>${m.scenario}`;
 
 m.questions.forEach((q,i)=>{
-html+=`<p><strong>Q${i+1}: ${q.q}</strong></p>`;
+html+=`
+<div style="margin-top:20px; padding:12px; background:#f8fbff; border-left:4px solid #1565c0; border-radius:8px;">
+<strong>🔍 Q${i+1}:</strong> ${q.q}
+</div>
+`;
 q.options.forEach((opt,index)=>{
 html+=`<input type="radio" name="q${i}" value="${index}"> ${opt}<br>`;
 });
