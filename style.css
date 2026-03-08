@@ -113,15 +113,12 @@ color: white;
    QUESTIONS
 ============================= */
 
-p strong {
-display: block;
-margin-top: 15px;
-font-size: 1.05rem;
-}
-
-input[type="radio"] {
-margin-right: 8px;
-margin-top: 6px;
+.questionBlock {
+margin-top: 20px;
+padding: 12px;
+background: #f8fbff;
+border-left: 4px solid #1565c0;
+border-radius: 8px;
 }
 
 /* =============================
