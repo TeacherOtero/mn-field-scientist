@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Week 3 — Stability & Change</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Week 3: Stability & Change</h1>
+<p>Minnesota Field Scientist</p>
+
+<nav class="navBar">
+<a href="index.html">⬅ Home</a>
+<a href="week1.html">Week 1</a>
+<a href="week2.html">Week 2</a>
+<a href="week3.html">Week 3</a>
+<a href="week4.html">Week 4</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Select a Mission</h2>
+
+<button class="missionBtn" onclick="loadMission(7)">
+🦪 Mission 7 — Zebra Mussel Invasion
+</button>
+
+<button class="missionBtn" onclick="loadMission(8)">
+🪨 Mission 8 — North Shore Freeze–Thaw
+</button>
+
+<button class="missionBtn" onclick="loadMission(9)">
+🛶 Mission 9 — Boundary Waters Forces
+</button>
+
+</div>
+
+<div id="missionArea"></div>
+
+</div>
+
+<script>
+
+/* =============================
+   WEEK 3 MISSION BANK
+============================= */
+
+const missionBank = {
+
+/* 7 */
+7:{
+title:"Mission 7: Zebra Mussel Invasion",
+scenario:`
+<p>Zebra mussels have spread to several Minnesota lakes over the past decade. Scientists observed that as zebra mussel populations increased, native mussel populations declined. Researchers are studying how invasive species affect ecosystem balance.</p>
+`,
+questions:[
+{
+q:"Which statement best describes the trend in native mussel populations?",
+options:[
+"They steadily decreased over time.",
+"They steadily increased.",
+"They remained unchanged.",
+"They changed randomly."
+],
+correct:0,
+explanation:"Data show a decline in native mussel populations."
+},
+{
+q:"Which explanation best accounts for this decline?",
+options:[
+"Zebra mussels compete for food and habitat resources.",
+"Zebra mussels increase oxygen levels.",
+"Native mussels stop interacting with water.",
+"Sunlight disappears."
+],
+correct:0,
+explanation:"Competition reduces native species populations."
+},
+{
+q:"How might declining native mussels affect the lake ecosystem?",
+options:[
+"Water clarity and nutrient cycling may change.",
+"The lake permanently freezes.",
+"Fish stop swimming.",
+"The lake becomes saltwater."
+],
+correct:0,
+explanation:"Mussels influence nutrient flow and water quality."
+},
+{
+q:"Which conclusion is most reasonable?",
+options:[
+"The ecosystem may experience long-term instability.",
+"The ecosystem remains perfectly stable.",
+"The lake permanently disappears.",
+"No measurable effect occurs."
+],
+correct:0,
+explanation:"Reduced biodiversity can destabilize ecosystems."
+}
+]
+},
+
+/* 8 */
+8:{
+title:"Mission 8: North Shore Freeze–Thaw",
+scenario:`
+<p>Along Minnesota’s North Shore, repeated freezing and thawing causes cracks in rock to widen. Water seeps into cracks during warmer temperatures and freezes overnight, expanding inside the rock.</p>
+`,
+questions:[
+{
+q:"Which temperature pattern allows freeze–thaw weathering to occur?",
+options:[
+"Temperatures fluctuate above and below freezing.",
+"Temperatures remain above freezing.",
+"Temperatures remain below freezing.",
+"Temperatures never change."
+],
+correct:0,
+explanation:"Fluctuations around 0°C cause freezing and thawing."
+},
+{
+q:"Why do rock cracks widen during freeze–thaw cycles?",
+options:[
+"Water expands when it freezes.",
+"Ice shrinks when frozen.",
+"Wind melts the rock.",
+"Sunlight freezes the rock."
+],
+correct:0,
+explanation:"Water expands upon freezing, exerting pressure."
+},
+{
+q:"What long-term effect may result?",
+options:[
+"Gradual destabilization of cliffs.",
+"Instant collapse after one freeze.",
+"No change occurs.",
+"Cliffs grow taller."
+],
+correct:0,
+explanation:"Repeated stress weakens rock over time."
+},
+{
+q:"How might this affect Lake Superior’s ecosystem?",
+options:[
+"Increased sediment may enter the water.",
+"The lake permanently drains.",
+"All fish disappear instantly.",
+"Water stops interacting with rock."
+],
+correct:0,
+explanation:"Sediment can affect aquatic habitats."
+}
+]
+},
+
+/* 9 */
+9:{
+title:"Mission 9: Boundary Waters Canoe Forces",
+scenario:`
+<p>During a field trip in Minnesota’s Boundary Waters, students measured how wind and paddling forces affected canoe motion. They observed how balanced and unbalanced forces changed movement.</p>
+`,
+questions:[
+{
+q:"If 100 N forward force equals 100 N backward force, what is the net force?",
+options:[
+"0 N",
+"100 N forward",
+"200 N forward",
+"100 N backward"
+],
+correct:0,
+explanation:"Equal and opposite forces cancel out."
+},
+{
+q:"What happens when forces are balanced?",
+options:[
+"The object moves at constant velocity.",
+"The object accelerates forward.",
+"The object accelerates backward.",
+"The object explodes."
+],
+correct:0,
+explanation:"Balanced forces result in no acceleration."
+},
+{
+q:"If wind force increases beyond paddling force, what will happen?",
+options:[
+"The canoe accelerates backward.",
+"The canoe accelerates forward.",
+"The canoe remains balanced.",
+"The canoe disappears."
+],
+correct:0,
+explanation:"Unbalanced forces cause acceleration."
+},
+{
+q:"Why is understanding forces important for canoe safety?",
+options:[
+"It helps predict motion in changing conditions.",
+"It eliminates gravity.",
+"It prevents wind.",
+"It freezes lakes."
+],
+correct:0,
+explanation:"Predicting motion improves safety decisions."
+}
+]
+}
+
+};
+
+/* =============================
+   ENGINE
+============================= */
+
+function loadMission(id){
+let m = missionBank[id];
+let html = `<div class="card"><h2>${m.title}</h2>${m.scenario}`;
+
+m.questions.forEach((q,i)=>{
+html+=`<p><strong>Q${i+1}: ${q.q}</strong></p>`;
+q.options.forEach((opt,index)=>{
+html+=`<input type="radio" name="q${i}" value="${index}"> ${opt}<br>`;
+});
+});
+
+html+=`<button onclick="submitMission(${id})">Submit Mission</button></div>`;
+document.getElementById("missionArea").innerHTML = html;
+}
+
+function submitMission(id){
+let m = missionBank[id];
+let correctCount=0;
+let reviewHTML="<div class='card'><h2>Mission Review</h2>";
+
+m.questions.forEach((q,i)=>{
+let selected=document.querySelector(`input[name="q${i}"]:checked`);
+let answer=selected?parseInt(selected.value):-1;
+
+if(answer===q.correct){correctCount++;}
+
+reviewHTML+=`
+<div class="reviewBox">
+<strong>Q${i+1}</strong><br>
+Correct Answer: ${q.options[q.correct]}<br>
+🧠 ${q.explanation}
+</div>`;
+});
+
+reviewHTML+=`Score: ${correctCount}/${m.questions.length}<br>
+<button onclick="loadMission(${id})">Retake</button>
+<button onclick="document.getElementById('missionArea').innerHTML=''">Back</button>
+</div>`;
+
+document.getElementById("missionArea").innerHTML = reviewHTML;
+}
+
+</script>
+
+</body>
+</html>
