@@ -55,22 +55,65 @@ const missionBank = {
 
 1:{
 title:"Mission 1: Warming Northwoods Lake",
-scenario:"<p>Researchers recorded steadily rising July lake temperatures over five years.</p>",
+scenario:
+"<p>Over five summers, researchers studying a northern Minnesota lake recorded steadily rising July water temperatures. Local anglers have reported catching fewer walleye, a fish species that requires cool, oxygen-rich water.</p>" +
+
+"<table>" +
+"<tr><th>Year</th><th>Average July Temperature (°C)</th></tr>" +
+"<tr><td>1</td><td>20</td></tr>" +
+"<tr><td>2</td><td>21</td></tr>" +
+"<tr><td>3</td><td>22</td></tr>" +
+"<tr><td>4</td><td>24</td></tr>" +
+"<tr><td>5</td><td>25</td></tr>" +
+"</table>",
+
 questions:[
 {
-q:"Which statement best describes the pattern?",
+q:"Which statement best describes the pattern shown in the data table?",
 options:[
-"The temperature increased overall.",
-"The temperature decreased.",
-"No pattern exists.",
-"It stayed constant."
+"The temperature remained constant across all five years.",
+"The temperature increased overall during the five-year period.",
+"The temperature decreased sharply in the final year.",
+"The temperature changed randomly without a clear trend."
+],
+correct:1,
+explanation:"The data show a steady increase from 20°C to 25°C over five years."
+},
+{
+q:"In this investigation, which variable is changing over time?",
+options:[
+"Year",
+"Average water temperature",
+"Type of fish present",
+"Amount of rainfall"
+],
+correct:1,
+explanation:"Average water temperature changes across years."
+},
+{
+q:"Which explanation best connects rising water temperature to declining walleye populations?",
+options:[
+"Warmer water holds less dissolved oxygen, which walleye require to survive.",
+"Warmer water causes lakes to freeze more quickly.",
+"Higher temperatures prevent sunlight from reaching the lake surface.",
+"Warmer water increases the density of oxygen in the lake."
 ],
 correct:0,
-explanation:"The data show a steady upward trend."
+explanation:"Warm water reduces dissolved oxygen levels needed by fish."
+},
+{
+q:"Based on the data and observations, which conclusion is most reasonable?",
+options:[
+"The lake ecosystem appears stable and unchanged.",
+"The lake ecosystem may be experiencing long-term change that could affect species balance.",
+"The lake will immediately dry up.",
+"The temperature increase guarantees all fish species will disappear."
+],
+correct:1,
+explanation:"Sustained warming suggests ecosystem change."
 }
 ]
 },
-
 2:{
 title:"Mission 2: River Flooding",
 scenario:"<p>River flow increased rapidly over four days.</p>",
