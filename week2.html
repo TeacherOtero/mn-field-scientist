@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Week 2 — Energy & Matter</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Week 2: Energy & Matter</h1>
+<p>Minnesota Field Scientist</p>
+
+<nav class="navBar">
+<a href="index.html">⬅ Home</a>
+<a href="week1.html">Week 1</a>
+<a href="week2.html">Week 2</a>
+<a href="week3.html">Week 3</a>
+<a href="week4.html">Week 4</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Select a Mission</h2>
+
+<button class="missionBtn" onclick="loadMission(4)">
+⛏ Mission 4 — Iron Range Mining
+</button>
+
+<button class="missionBtn" onclick="loadMission(5)">
+🌬 Mission 5 — Lake Superior Weather
+</button>
+
+<button class="missionBtn" onclick="loadMission(6)">
+🌿 Mission 6 — Wetland Oxygen Levels
+</button>
+
+</div>
+
+<div id="missionArea"></div>
+
+</div>
+
+<script>
+
+/* =============================
+   WEEK 2 MISSION BANK
+============================= */
+
+const missionBank = {
+
+4:{
+title:"Mission 4: Iron Range Mining",
+scenario:`
+<p>Surface mining in northeastern Minnesota has reduced forest cover over the past decade, exposing more soil and altering nearby land systems. Scientists are studying how these changes affect erosion and water quality.</p>
+`,
+questions:[
+{
+q:"What trend occurred in forest cover over time?",
+options:[
+"It decreased steadily.",
+"It increased steadily.",
+"It remained unchanged.",
+"It fluctuated randomly."
+],
+correct:0,
+explanation:"Forest cover declined due to mining activity."
+},
+{
+q:"What is a likely environmental outcome of reduced forest cover?",
+options:[
+"Increased soil erosion.",
+"Glacier formation.",
+"Ocean expansion.",
+"No environmental impact."
+],
+correct:0,
+explanation:"Tree roots stabilize soil; removing them increases erosion."
+},
+{
+q:"Which system is directly affected by mining activities?",
+options:[
+"The land system.",
+"The solar system.",
+"The ocean system.",
+"The star system."
+],
+correct:0,
+explanation:"Mining alters land and soil systems."
+},
+{
+q:"Which strategy would reduce environmental impact?",
+options:[
+"Replanting native trees.",
+"Removing all vegetation permanently.",
+"Expanding mining areas.",
+"Draining nearby wetlands."
+],
+correct:0,
+explanation:"Reforestation helps restore ecosystem stability."
+}
+]
+},
+
+5:{
+title:"Mission 5: Lake Superior Weather",
+scenario:`
+<p>Cold air passing over warmer Lake Superior water often leads to heavy snowfall downwind. Meteorologists call this phenomenon lake-effect snow and study how temperature differences drive weather patterns.</p>
+`,
+questions:[
+{
+q:"Why does lake-effect snow form?",
+options:[
+"Heat transfers from warmer water to colder air.",
+"The lake instantly freezes.",
+"Water removes gravity from air.",
+"Wind eliminates moisture."
+],
+correct:0,
+explanation:"Warm water transfers heat and moisture to cold air."
+},
+{
+q:"Which systems are interacting during lake-effect snow?",
+options:[
+"The atmosphere and hydrosphere.",
+"The biosphere only.",
+"The mantle and crust.",
+"The stars and ocean."
+],
+correct:0,
+explanation:"Air (atmosphere) interacts with lake water (hydrosphere)."
+},
+{
+q:"Which variable most influences the intensity of lake-effect snow?",
+options:[
+"The temperature difference between air and water.",
+"Soil mineral composition.",
+"Prairie grass density.",
+"Mining activity."
+],
+correct:0,
+explanation:"Greater temperature differences increase energy transfer."
+},
+{
+q:"What energy source ultimately drives this system?",
+options:[
+"The Sun.",
+"The Moon.",
+"Coal deposits.",
+"Wind alone."
+],
+correct:0,
+explanation:"Solar energy warms lake water."
+}
+]
+},
+
+6:{
+title:"Mission 6: Wetland Oxygen Levels",
+scenario:`
+<p>Researchers observed that as sunlight decreased over several weeks in a Minnesota wetland, dissolved oxygen levels in the water also decreased. Scientists are investigating how energy flow affects aquatic life.</p>
+`,
+questions:[
+{
+q:"What relationship is shown in the data?",
+options:[
+"Less sunlight leads to lower oxygen levels.",
+"More sunlight leads to lower oxygen levels.",
+"No clear pattern exists.",
+"Oxygen levels remain constant."
+],
+correct:0,
+explanation:"Reduced sunlight corresponds with reduced oxygen."
+},
+{
+q:"Why does oxygen decrease when sunlight decreases?",
+options:[
+"Photosynthesis produces oxygen and requires light.",
+"Water freezes without sunlight.",
+"Fish stop interacting with water.",
+"Sunlight removes oxygen from water."
+],
+correct:0,
+explanation:"Photosynthesis depends on light energy."
+},
+{
+q:"How might decreased oxygen affect fish populations?",
+options:[
+"Fish populations may decline.",
+"Fish populations double instantly.",
+"No effect on fish.",
+"Fish become plants."
+],
+correct:0,
+explanation:"Fish require dissolved oxygen to survive."
+},
+{
+q:"Which concept best describes this ecosystem response?",
+options:[
+"Potential instability.",
+"Perfect stability.",
+"Immediate collapse.",
+"Permanent freezing."
+],
+correct:0,
+explanation:"Changes in oxygen can destabilize aquatic ecosystems."
+}
+]
+}
+
+};
+
+/* =============================
+   ENGINE (Same as Week 1)
+============================= */
+
+function loadMission(id){
+let m = missionBank[id];
+let html = `<div class="card"><h2>${m.title}</h2>${m.scenario}`;
+
+m.questions.forEach((q,i)=>{
+html+=`<p><strong>Q${i+1}: ${q.q}</strong></p>`;
+q.options.forEach((opt,index)=>{
+html+=`<input type="radio" name="q${i}" value="${index}"> ${opt}<br>`;
+});
+});
+
+html+=`<button onclick="submitMission(${id})">Submit Mission</button></div>`;
+document.getElementById("missionArea").innerHTML = html;
+}
+
+function submitMission(id){
+let m = missionBank[id];
+let correctCount=0;
+let reviewHTML="<div class='card'><h2>Mission Review</h2>";
+
+m.questions.forEach((q,i)=>{
+let selected=document.querySelector(`input[name="q${i}"]:checked`);
+let answer=selected?parseInt(selected.value):-1;
+
+if(answer===q.correct){correctCount++;}
+
+reviewHTML+=`
+<div class="reviewBox">
+<strong>Q${i+1}</strong><br>
+Correct Answer: ${q.options[q.correct]}<br>
+🧠 ${q.explanation}
+</div>`;
+});
+
+reviewHTML+=`Score: ${correctCount}/${m.questions.length}<br>
+<button onclick="loadMission(${id})">Retake</button>
+<button onclick="document.getElementById('missionArea').innerHTML=''">Back</button>
+</div>`;
+
+document.getElementById("missionArea").innerHTML = reviewHTML;
+}
+
+</script>
+
+</body>
+</html>
