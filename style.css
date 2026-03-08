@@ -182,3 +182,8 @@ background: #0d47a1;
 color: white;
 margin-top: 30px;
 }
+.missionList {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
