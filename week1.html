@@ -50,191 +50,82 @@
 /* =============================
    WEEK 1 MISSION BANK
 ============================= */
-
 const missionBank = {
 
-1:{
-title:"Mission 1: Warming Northwoods Lake",
+1: {
+title: "Mission 1: Warming Northwoods Lake",
 scenario:
-"<p>Over five summers, researchers studying a northern Minnesota lake recorded steadily rising July water temperatures. Local anglers have reported catching fewer walleye, a fish species that requires cool, oxygen-rich water.</p>" +
-
+"<p>Over five summers, researchers studying a northern Minnesota lake recorded steadily rising July water temperatures.</p>" +
 "<table>" +
-"<tr><th>Year</th><th>Average July Temperature (°C)</th></tr>" +
+"<tr><th>Year</th><th>Temp (°C)</th></tr>" +
 "<tr><td>1</td><td>20</td></tr>" +
 "<tr><td>2</td><td>21</td></tr>" +
 "<tr><td>3</td><td>22</td></tr>" +
 "<tr><td>4</td><td>24</td></tr>" +
 "<tr><td>5</td><td>25</td></tr>" +
 "</table>",
-
-questions:[
+questions: [
 {
-q:"Which statement best describes the pattern shown in the data table?",
-options:[
-"The temperature remained constant across all five years.",
-"The temperature increased overall during the five-year period.",
-"The temperature decreased sharply in the final year.",
-"The temperature changed randomly without a clear trend."
+q: "Which statement best describes the pattern?",
+options: [
+"The temperature increased overall.",
+"The temperature decreased.",
+"No pattern exists.",
+"It stayed constant."
 ],
-correct:1,
-explanation:"The data show a steady increase from 20°C to 25°C over five years."
-},
-{
-q:"In this investigation, which variable is changing over time?",
-options:[
-"Year",
-"Average water temperature",
-"Type of fish present",
-"Amount of rainfall"
-],
-correct:1,
-explanation:"Average water temperature changes across years."
-},
-{
-q:"Which explanation best connects rising water temperature to declining walleye populations?",
-options:[
-"Warmer water holds less dissolved oxygen, which walleye require to survive.",
-"Warmer water causes lakes to freeze more quickly.",
-"Higher temperatures prevent sunlight from reaching the lake surface.",
-"Warmer water increases the density of oxygen in the lake."
-],
-correct:0,
-explanation:"Warm water reduces dissolved oxygen levels needed by fish."
-},
-{
-q:"Based on the data and observations, which conclusion is most reasonable?",
-options:[
-"The lake ecosystem appears stable and unchanged.",
-"The lake ecosystem may be experiencing long-term change that could affect species balance.",
-"The lake will immediately dry up.",
-"The temperature increase guarantees all fish species will disappear."
-],
-correct:1,
-explanation:"Sustained warming suggests ecosystem change."
+correct: 0,
+explanation: "The data show a steady upward trend."
 }
 ]
 },
-2:{
-title:"Mission 2: Mississippi River Flooding",
-scenario:
-"<p>In early April, rapid snowmelt combined with heavy rainfall caused the Mississippi River near St. Paul to rise quickly. Scientists measured river flow over four days and observed dramatic increases.</p>" +
 
+2: {
+title: "Mission 2: Mississippi River Flooding",
+scenario:
+"<p>River flow increased rapidly over four days.</p>" +
 "<table>" +
-"<tr><th>Day</th><th>River Flow (CFS)</th></tr>" +
+"<tr><th>Day</th><th>Flow (CFS)</th></tr>" +
 "<tr><td>1</td><td>15000</td></tr>" +
 "<tr><td>2</td><td>22000</td></tr>" +
 "<tr><td>3</td><td>35000</td></tr>" +
 "<tr><td>4</td><td>40000</td></tr>" +
 "</table>",
-
-questions:[
+questions: [
 {
-q:"Which statement best describes how the river flow changed over the four-day period?",
-options:[
-"The river flow decreased steadily each day.",
-"The river flow increased overall each day.",
-"The river flow remained constant.",
-"The river flow changed randomly."
+q: "How did river flow change?",
+options: [
+"It increased overall.",
+"It decreased.",
+"It stayed the same.",
+"It fluctuated randomly."
 ],
-correct:1,
-explanation:"The flow increased from 15,000 to 40,000 CFS."
-},
-{
-q:"Which is the dependent variable in this investigation?",
-options:[
-"Day",
-"River flow (CFS)",
-"Snowfall amount",
-"Air temperature"
-],
-correct:1,
-explanation:"River flow changes in response to environmental conditions."
-},
-{
-q:"Which explanation best describes why erosion increased?",
-options:[
-"Faster-moving water exerts greater force on soil particles.",
-"Increased river flow removes gravity.",
-"Higher water levels prevent soil from interacting with water.",
-"Riverbanks become stronger when water levels rise."
-],
-correct:0,
-explanation:"Greater water speed increases force on riverbanks."
-},
-{
-q:"Based on the data, which conclusion is most reasonable?",
-options:[
-"The river system remained stable.",
-"The river system experienced rapid change indicating instability.",
-"The river permanently changed direction.",
-"The river stopped responding to weather."
-],
-correct:1,
-explanation:"Rapid increases in flow indicate instability."
+correct: 0,
+explanation: "Flow increased steadily over four days."
 }
 ]
 },
 
-3:{
-title:"Mission 3: Prairie Food Web Shift",
+3: {
+title: "Mission 3: Prairie Food Web Shift",
 scenario:
-"<p>After an unusually mild winter in western Minnesota, ecologists observed a sharp increase in grasshopper populations across prairie sites. Researchers also recorded decreases in prairie grass coverage.</p>" +
-
-"<table>" +
-"<tr><th>Year</th><th>Grasshoppers per m²</th></tr>" +
-"<tr><td>1</td><td>12</td></tr>" +
-"<tr><td>2</td><td>14</td></tr>" +
-"<tr><td>3</td><td>13</td></tr>" +
-"<tr><td>4</td><td>25</td></tr>" +
-"</table>",
-
-questions:[
+"<p>Grasshopper populations increased dramatically after a mild winter.</p>",
+questions: [
 {
-q:"Which statement best describes the pattern in grasshopper population?",
-options:[
-"The population remained constant.",
-"The population decreased steadily.",
-"The population increased dramatically in Year 4.",
-"The population changed randomly."
+q: "What trend occurred?",
+options: [
+"Population increased.",
+"Population decreased.",
+"No change.",
+"Random change."
 ],
-correct:2,
-explanation:"The population nearly doubled in Year 4."
-},
-{
-q:"Which explanation best connects the mild winter to the population increase?",
-options:[
-"Mild winters allow more grasshoppers to survive.",
-"Mild winters eliminate predators permanently.",
-"Mild winters reduce sunlight.",
-"Mild winters freeze the soil."
-],
-correct:0,
-explanation:"Higher survival rates increase spring population."
-},
-{
-q:"If grasshopper populations continue to increase, which outcome is most likely?",
-options:[
-"Prairie grass populations increase.",
-"Prairie grass populations decrease due to consumption.",
-"All predators disappear instantly.",
-"Sunlight levels decrease."
-],
-correct:1,
-explanation:"More herbivores consume more grasses."
-},
-{
-q:"Which best describes the prairie ecosystem response?",
-options:[
-"It remains perfectly stable.",
-"It may experience short-term instability.",
-"It permanently collapses.",
-"It instantly returns to original balance."
-],
-correct:1,
-explanation:"Rapid population changes can destabilize ecosystems."
+correct: 0,
+explanation: "The data show a dramatic increase."
 }
 ]
 }
+
+};
+
 
 /* =============================
    ENGINE
