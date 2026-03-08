@@ -202,17 +202,3 @@ header {
 position: relative;
 overflow: hidden;
 }
-
-header::after {
-content: "";
-position: absolute;
-right: 40px;
-top: 10px;
-width: 120px;
-height: 160px;
-background: url('https://upload.wikimedia.org/wikipedia/commons/9/9c/Minnesota_outline.svg');
-background-size: contain;
-background-repeat: no-repeat;
-opacity: 0.08;
-pointer-events: none;
-}
