@@ -54,55 +54,62 @@
 const missionBank = {
 
 /* 7 */
-7:{
-title:"Mission 7: Zebra Mussel Invasion",
-scenario:`
-<p>Zebra mussels have spread to several Minnesota lakes over the past decade. Scientists observed that as zebra mussel populations increased, native mussel populations declined. Researchers are studying how invasive species affect ecosystem balance.</p>
-`,
-questions:[
+7: {
+title: "Mission 7: Zebra Mussel Invasion",
+scenario:
+"<p>Over the past decade, zebra mussels have spread to several Minnesota lakes. Scientists observed that as zebra mussel populations increased, native mussel populations declined significantly.</p>" +
+"<table>" +
+"<tr><th>Year</th><th>Native Mussel Population Index</th></tr>" +
+"<tr><td>1</td><td>100</td></tr>" +
+"<tr><td>3</td><td>92</td></tr>" +
+"<tr><td>5</td><td>75</td></tr>" +
+"<tr><td>7</td><td>60</td></tr>" +
+"<tr><td>10</td><td>45</td></tr>" +
+"</table>",
+questions: [
 {
-q:"Which statement best describes the trend in native mussel populations?",
-options:[
-"They steadily decreased over time.",
-"They steadily increased.",
-"They remained unchanged.",
-"They changed randomly."
+q: "Which statement best describes the trend in native mussel populations?",
+options: [
+"Native mussel populations increased over time.",
+"Native mussel populations decreased over time.",
+"Native mussel populations remained constant.",
+"Native mussel populations changed randomly."
 ],
-correct:0,
-explanation:"Data show a decline in native mussel populations."
+correct: 1,
+explanation: "The population index decreases steadily from 100 to 45."
 },
 {
-q:"Which explanation best accounts for this decline?",
-options:[
+q: "Which explanation best accounts for the decline in native mussels?",
+options: [
 "Zebra mussels compete for food and habitat resources.",
-"Zebra mussels increase oxygen levels.",
+"Zebra mussels increase oxygen levels in the lake.",
 "Native mussels stop interacting with water.",
-"Sunlight disappears."
+"Zebra mussels eliminate sunlight."
 ],
-correct:0,
-explanation:"Competition reduces native species populations."
+correct: 0,
+explanation: "Invasive zebra mussels compete for limited resources."
 },
 {
-q:"How might declining native mussels affect the lake ecosystem?",
-options:[
-"Water clarity and nutrient cycling may change.",
+q: "How might declining native mussels affect the lake ecosystem?",
+options: [
+"Changes in water clarity and nutrient cycling.",
 "The lake permanently freezes.",
-"Fish stop swimming.",
+"All fish disappear instantly.",
 "The lake becomes saltwater."
 ],
-correct:0,
-explanation:"Mussels influence nutrient flow and water quality."
+correct: 0,
+explanation: "Mussels influence nutrient flow and water quality."
 },
 {
-q:"Which conclusion is most reasonable?",
-options:[
+q: "Which conclusion is most reasonable?",
+options: [
 "The ecosystem may experience long-term instability.",
 "The ecosystem remains perfectly stable.",
 "The lake permanently disappears.",
 "No measurable effect occurs."
 ],
-correct:0,
-explanation:"Reduced biodiversity can destabilize ecosystems."
+correct: 0,
+explanation: "Reduced biodiversity can destabilize ecosystems."
 }
 ]
 },
