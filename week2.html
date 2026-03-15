@@ -53,55 +53,62 @@
 
 const missionBank = {
 
-4:{
-title:"Mission 4: Iron Range Mining",
-scenario:`
-<p>Surface mining in northeastern Minnesota has reduced forest cover over the past decade, exposing more soil and altering nearby land systems. Scientists are studying how these changes affect erosion and water quality.</p>
-`,
-questions:[
+4: {
+title: "Mission 4: Iron Range Mining",
+scenario:
+"<p>Surface mining in northeastern Minnesota has reduced forest cover over the past decade, exposing more soil and altering nearby land systems. Scientists are studying how these changes affect erosion and water quality.</p>" +
+"<table>" +
+"<tr><th>Year</th><th>Forest Cover (%)</th></tr>" +
+"<tr><td>1</td><td>82</td></tr>" +
+"<tr><td>3</td><td>79</td></tr>" +
+"<tr><td>5</td><td>73</td></tr>" +
+"<tr><td>7</td><td>65</td></tr>" +
+"<tr><td>10</td><td>58</td></tr>" +
+"</table>",
+questions: [
 {
-q:"What trend occurred in forest cover over time?",
-options:[
-"It decreased steadily.",
-"It increased steadily.",
-"It remained unchanged.",
-"It fluctuated randomly."
+q: "Which statement best describes the trend in forest cover over time?",
+options: [
+"Forest cover remained stable throughout the ten years.",
+"Forest cover gradually increased over time.",
+"Forest cover decreased steadily over the ten-year period.",
+"Forest cover fluctuated randomly without a trend."
 ],
-correct:0,
-explanation:"Forest cover declined due to mining activity."
+correct: 2,
+explanation: "The data show a consistent decrease in forest cover from 82% to 58%."
 },
 {
-q:"What is a likely environmental outcome of reduced forest cover?",
-options:[
-"Increased soil erosion.",
-"Glacier formation.",
-"Ocean expansion.",
-"No environmental impact."
+q: "Which outcome is most likely to occur as forest cover decreases?",
+options: [
+"Increased soil erosion due to reduced root systems.",
+"Decreased water runoff during heavy rain.",
+"Increased oxygen production in the area.",
+"Reduced surface temperatures."
 ],
-correct:0,
-explanation:"Tree roots stabilize soil; removing them increases erosion."
+correct: 0,
+explanation: "Tree roots stabilize soil. Removing them increases erosion risk."
 },
 {
-q:"Which system is directly affected by mining activities?",
-options:[
-"The land system.",
-"The solar system.",
-"The ocean system.",
-"The star system."
+q: "How might decreased forest cover affect nearby rivers and streams?",
+options: [
+"Rivers may experience increased sediment due to erosion.",
+"Rivers will permanently stop flowing.",
+"Rivers will become saltwater systems.",
+"Rivers will freeze year-round."
 ],
-correct:0,
-explanation:"Mining alters land and soil systems."
+correct: 0,
+explanation: "Erosion increases sediment entering water systems."
 },
 {
-q:"Which strategy would reduce environmental impact?",
-options:[
-"Replanting native trees.",
-"Removing all vegetation permanently.",
-"Expanding mining areas.",
-"Draining nearby wetlands."
+q: "Which strategy would best reduce environmental impact while allowing mining to continue?",
+options: [
+"Replant native trees after mining operations.",
+"Increase the size of mining areas.",
+"Remove all nearby vegetation permanently.",
+"Drain nearby wetlands."
 ],
-correct:0,
-explanation:"Reforestation helps restore ecosystem stability."
+correct: 0,
+explanation: "Reforestation helps restore ecosystem stability."
 }
 ]
 },
