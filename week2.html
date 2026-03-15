@@ -168,55 +168,61 @@ explanation: "Greater temperature differences increase heat and moisture transfe
 }
 ]
 },
-6:{
-title:"Mission 6: Wetland Oxygen Levels",
-scenario:`
-<p>Researchers observed that as sunlight decreased over several weeks in a Minnesota wetland, dissolved oxygen levels in the water also decreased. Scientists are investigating how energy flow affects aquatic life.</p>
-`,
-questions:[
+6: {
+title: "Mission 6: Wetland Photosynthesis",
+scenario:
+"<p>Scientists studying a Minnesota wetland measured dissolved oxygen levels in the water while tracking changes in sunlight due to increased cloud cover. They noticed that oxygen levels dropped when sunlight decreased.</p>" +
+"<table>" +
+"<tr><th>Week</th><th>Sunlight (hrs/day)</th><th>Dissolved Oxygen (mg/L)</th></tr>" +
+"<tr><td>1</td><td>10</td><td>8.5</td></tr>" +
+"<tr><td>2</td><td>8</td><td>7.2</td></tr>" +
+"<tr><td>3</td><td>6</td><td>6.1</td></tr>" +
+"<tr><td>4</td><td>5</td><td>5.4</td></tr>" +
+"</table>",
+questions: [
 {
-q:"What relationship is shown in the data?",
-options:[
-"Less sunlight leads to lower oxygen levels.",
-"More sunlight leads to lower oxygen levels.",
-"No clear pattern exists.",
-"Oxygen levels remain constant."
+q: "Which statement best describes the relationship between sunlight and oxygen levels?",
+options: [
+"As sunlight decreases, dissolved oxygen decreases.",
+"As sunlight decreases, dissolved oxygen increases.",
+"Oxygen levels remain constant.",
+"No relationship exists."
 ],
-correct:0,
-explanation:"Reduced sunlight corresponds with reduced oxygen."
+correct: 0,
+explanation: "The data show oxygen levels falling as sunlight decreases."
 },
 {
-q:"Why does oxygen decrease when sunlight decreases?",
-options:[
-"Photosynthesis produces oxygen and requires light.",
-"Water freezes without sunlight.",
-"Fish stop interacting with water.",
-"Sunlight removes oxygen from water."
+q: "Why does reduced sunlight lead to lower oxygen levels?",
+options: [
+"Sunlight powers photosynthesis, which produces oxygen.",
+"Sunlight removes oxygen from water.",
+"Sunlight causes water to evaporate.",
+"Sunlight prevents plants from growing."
 ],
-correct:0,
-explanation:"Photosynthesis depends on light energy."
+correct: 0,
+explanation: "Photosynthesis requires light energy and releases oxygen."
 },
 {
-q:"How might decreased oxygen affect fish populations?",
-options:[
-"Fish populations may decline.",
-"Fish populations double instantly.",
-"No effect on fish.",
-"Fish become plants."
+q: "How might decreasing oxygen affect fish in the wetland?",
+options: [
+"Fish populations may decrease due to lower oxygen.",
+"Fish populations immediately increase.",
+"Fish become plants.",
+"No effect occurs."
 ],
-correct:0,
-explanation:"Fish require dissolved oxygen to survive."
+correct: 0,
+explanation: "Fish need dissolved oxygen for cellular respiration."
 },
 {
-q:"Which concept best describes this ecosystem response?",
-options:[
-"Potential instability.",
-"Perfect stability.",
-"Immediate collapse.",
-"Permanent freezing."
+q: "Which conclusion is most reasonable based on the data?",
+options: [
+"The wetland ecosystem may become unstable if oxygen keeps decreasing.",
+"The wetland ecosystem is completely unaffected.",
+"The wetland will instantly dry up.",
+"Sunlight no longer affects ecosystems."
 ],
-correct:0,
-explanation:"Changes in oxygen can destabilize aquatic ecosystems."
+correct: 0,
+explanation: "Lower oxygen can disrupt ecosystem balance."
 }
 ]
 }
