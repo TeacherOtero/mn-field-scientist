@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Week 4 — Systems Integration</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Week 4: Systems Integration</h1>
+<p>Minnesota Field Scientist</p>
+
+<nav class="navBar">
+<a href="index.html">⬅ Home</a>
+<a href="week1.html">Week 1</a>
+<a href="week2.html">Week 2</a>
+<a href="week3.html">Week 3</a>
+<a href="week4.html">Week 4</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Select a Mission</h2>
+
+<button class="missionBtn" onclick="loadMission(10)">
+🛣 Mission 10 — Freeze–Thaw Road Damage
+</button>
+
+<button class="missionBtn" onclick="loadMission(11)">
+🌪 Mission 11 — Severe Storm Engineering
+</button>
+
+<button class="missionBtn" onclick="loadMission(12)">
+🌎 Mission 12 — Protect Minnesota (Capstone)
+</button>
+
+</div>
+
+<div id="missionArea"></div>
+
+</div>
+
+<script>
+
+const missionBank = {
+
+10:{
+title:"Mission 10: Freeze–Thaw Road Damage",
+scenario:
+"<p>Minnesota road crews observe potholes forming after repeated freezing and thawing cycles. Water enters cracks during the day and freezes at night.</p>" +
+"<table>" +
+"<tr><th>Day</th><th>High Temp (°C)</th><th>Low Temp (°C)</th></tr>" +
+"<tr><td>1</td><td>4</td><td>-3</td></tr>" +
+"<tr><td>2</td><td>6</td><td>-2</td></tr>" +
+"<tr><td>3</td><td>3</td><td>-4</td></tr>" +
+"<tr><td>4</td><td>5</td><td>-1</td></tr>" +
+"<tr><td>5</td><td>2</td><td>-5</td></tr>" +
+"</table>",
+questions:[
+{
+q:"Which pattern allows freeze–thaw damage to occur?",
+options:[
+"Temperatures stay above freezing.",
+"Temperatures stay below freezing.",
+"Temperatures fluctuate above and below freezing.",
+"Temperatures remain constant."
+],
+correct:2,
+explanation:"Freeze–thaw cycles occur when temperatures cross 0°C."
+},
+{
+q:"Why does freezing water damage pavement?",
+options:[
+"Water expands when it freezes.",
+"Water shrinks when frozen.",
+"Ice absorbs sunlight.",
+"Ice removes gravity."
+],
+correct:0,
+explanation:"Water expands when freezing and exerts pressure."
+},
+{
+q:"Why do potholes appear after many cycles rather than one freeze?",
+options:[
+"Repeated expansion weakens pavement.",
+"Pavement instantly collapses.",
+"Vehicles prevent freezing.",
+"Temperature changes stop cracks."
+],
+correct:0,
+explanation:"Repeated stress gradually weakens structure."
+},
+{
+q:"Which engineering strategy reduces freeze–thaw damage?",
+options:[
+"Improve drainage to remove water.",
+"Add more cracks to pavement.",
+"Block sunlight from roads.",
+"Remove asphalt completely."
+],
+correct:0,
+explanation:"Reducing water infiltration limits freezing expansion."
+}
+]
+},
+
+11:{
+title:"Mission 11: Severe Storm Engineering",
+scenario:
+"<p>During a powerful Minnesota storm, wind speeds increased rapidly and damaged some structures while others remained intact.</p>" +
+"<table>" +
+"<tr><th>Time</th><th>Wind Speed (mph)</th></tr>" +
+"<tr><td>2:00 PM</td><td>30</td></tr>" +
+"<tr><td>3:00 PM</td><td>45</td></tr>" +
+"<tr><td>4:00 PM</td><td>60</td></tr>" +
+"<tr><td>5:00 PM</td><td>70</td></tr>" +
+"</table>",
+questions:[
+{
+q:"Which statement best describes the wind speed trend?",
+options:[
+"Wind speeds decreased.",
+"Wind speeds increased steadily.",
+"Wind speeds remained constant.",
+"Wind speeds changed randomly."
+],
+correct:1,
+explanation:"Wind speeds increased from 30 mph to 70 mph."
+},
+{
+q:"Why do stronger winds increase structural damage risk?",
+options:[
+"Higher wind speeds exert greater force.",
+"Wind removes gravity.",
+"Wind freezes structures.",
+"Wind reduces pressure."
+],
+correct:0,
+explanation:"Force increases with wind speed."
+},
+{
+q:"Which roof design reduces wind damage?",
+options:[
+"Aerodynamic sloped roof",
+"Flat unsupported roof",
+"Paper covering",
+"Unanchored panels"
+],
+correct:0,
+explanation:"Sloped roofs reduce uplift forces."
+},
+{
+q:"Why must engineers consider trade-offs?",
+options:[
+"Stronger materials increase cost or weight.",
+"All materials behave the same.",
+"Wind never changes direction.",
+"Buildings do not interact with weather."
+],
+correct:0,
+explanation:"Engineering requires balancing cost, safety, and performance."
+}
+]
+},
+
+12:{
+title:"Mission 12: Protect Minnesota (Capstone)",
+scenario:
+"<p>Minnesota scientists have observed warming lakes, stronger storms, invasive species spread, and infrastructure damage. Leaders must design solutions that consider multiple interconnected systems.</p>",
+questions:[
+{
+q:"Which statement best explains why these problems are connected?",
+options:[
+"Climate patterns influence multiple systems.",
+"Each change happens independently.",
+"Storms only affect weather.",
+"Lakes cannot affect rivers."
+],
+correct:0,
+explanation:"Environmental systems are interconnected."
+},
+{
+q:"Which conclusion is most reasonable?",
+options:[
+"Minnesota systems are experiencing long-term change.",
+"Everything is stable.",
+"All problems will disappear naturally.",
+"No action is needed."
+],
+correct:0,
+explanation:"The data suggest sustained environmental change."
+},
+{
+q:"Which solution shows systems-level thinking?",
+options:[
+"Restore wetlands and reinforce infrastructure.",
+"Focus only on roads.",
+"Remove vegetation.",
+"Increase pavement."
+],
+correct:0,
+explanation:"Wetlands help manage flooding and support ecosystems."
+},
+{
+q:"If storms and temperature variability increase, what is most likely?",
+options:[
+"Greater stress on ecosystems and infrastructure.",
+"Immediate stabilization.",
+"Elimination of seasons.",
+"Independent systems."
+],
+correct:0,
+explanation:"More variability increases system stress."
+}
+]
+}
+
+};
+
+/* Same engine used in other weeks */
+
+function loadMission(id){
+let m = missionBank[id];
+let html = "<div class='card'><h2>"+m.title+"</h2>"+m.scenario;
+
+for (let i=0;i<m.questions.length;i++){
+let q = m.questions[i];
+
+html += "<div class='questionBlock'><strong>Q"+(i+1)+":</strong> "+q.q+"</div>";
+
+for (let j=0;j<q.options.length;j++){
+html += "<input type='radio' name='q"+i+"' value='"+j+"'> "+q.options[j]+"<br>";
+}
+}
+
+if(id===12){
+html += "<h3>Optional Reflection</h3>";
+html += "<p>Explain why Minnesota must use systems-level solutions to address environmental change.</p>";
+html += "<textarea rows='4'></textarea>";
+}
+
+html += "<button onclick='submitMission("+id+")'>Submit Mission</button></div>";
+
+document.getElementById("missionArea").innerHTML = html;
+}
+
+function submitMission(id){
+let m = missionBank[id];
+let correctCount=0;
+let reviewHTML="<div class='card'><h2>Mission Review</h2>";
+
+for (let i=0;i<m.questions.length;i++){
+let selected=document.querySelector("input[name='q"+i+"']:checked");
+let answer=selected?parseInt(selected.value):-1;
+
+if(answer===m.questions[i].correct){correctCount++;}
+
+reviewHTML+="<div class='reviewBox'><strong>Q"+(i+1)+"</strong><br>";
+reviewHTML+="Correct Answer: "+m.questions[i].options[m.questions[i].correct]+"<br>";
+reviewHTML+="🧠 "+m.questions[i].explanation+"</div>";
+}
+
+reviewHTML+="Score: "+correctCount+"/"+m.questions.length+"<br>";
+reviewHTML+="<button onclick='loadMission("+id+")'>Retake</button>";
+reviewHTML+="<button onclick=\"document.getElementById('missionArea').innerHTML=''\">Back</button></div>";
+
+document.getElementById("missionArea").innerHTML=reviewHTML;
+}
+
+</script>
+
+</body>
+</html>
