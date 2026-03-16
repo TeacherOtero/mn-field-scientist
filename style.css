@@ -234,3 +234,10 @@ transition: all 0.2s ease;
 background: white;
 color: #0d47a1;
 }
+/* Mission button layout */
+.missionBtn {
+display: block;
+width: 100%;
+text-align: left;
+margin-top: 10px;
+}
